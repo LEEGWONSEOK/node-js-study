@@ -196,15 +196,17 @@ function wait(sec) {
   });
 }
 
-async function myAsyncFunc() {
-  console.log('1번째 console', new Date());
-  try {
-    await wait(2);
-  } catch (err) {
-    console.log('2번째 console', err);
-  }
-  console.log('3번째 console', new Date());
-}
+// async function myAsyncFunc() {
+//   console.log('1번째 console', new Date());
+//   try {
+//     await wait(2);
+//   } catch (err) {
+//     console.log('2번째 console', err);
+//   }
+//   console.log('3번째 console', new Date());
+// }
 
-const result = myAsyncFunc();
+// const result = myAsyncFunc();
+
+
 
