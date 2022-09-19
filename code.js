@@ -188,13 +188,13 @@
 // const result2 = myPromiseFunc().catch(e => console.log(e));
 
 
-function wait(sec) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      reject('throw error');
-    }, sec * 1000);
-  });
-}
+// function wait(sec) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       reject('throw error');
+//     }, sec * 1000);
+//   });
+// }
 
 // async function myAsyncFunc() {
 //   console.log('1번째 console', new Date());
@@ -208,5 +208,46 @@ function wait(sec) {
 
 // const result = myAsyncFunc();
 
+// function factorial1(num) {
+//   if (num === 1) return 1;
+//   return num * factorial1(num - 1);	
+// }
+
+// // 반복문(for) 으로 표현
+// function factorial2(num) {
+//   let result = 1;
+//   for (let i = 1; i <= num; i++) {
+//     result = result * i;
+//   }
+//   return result;
+// }
+
+// console.log('재귀함수 : ', factorial1(5));
+// console.log('반복문 : ', factorial2(5));
+
+function factorialBasic(num) {
+  if (num === 1) return 1;
+  return num * factorialBasic(num - 1);	
+}
+
+factorialBasic(3);
+
+// 꼬리 재귀함수로 해결
+function factorialTail(num, total=1) {
+  if (num === 1) return total;
+  return factorialTail(num - 1, total * num);	
+}
+
+factorialTail(3);
+
+function factorial(n,partialFactorial=1){
+    if(!n)
+        return partialFactorial;
+    return factorial(n-1,n*partialFactorial)
+}
+
+factorial(3)
 
 
+console.log('일반재귀 : ', factorialBasic(3));
+console.log('꼬리재귀 : ', factorialTail(3));
