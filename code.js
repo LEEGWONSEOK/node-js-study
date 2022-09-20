@@ -246,6 +246,9 @@ function factorial(n,partialFactorial=1){
     return factorial(n-1,n*partialFactorial)
 }
 
+
+
+
 factorial(3)
 
 
