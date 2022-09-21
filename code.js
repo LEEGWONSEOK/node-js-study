@@ -232,25 +232,91 @@ function factorialBasic(num) {
 
 factorialBasic(3);
 
-// 꼬리 재귀함수로 해결
-function factorialTail(num, total=1) {
-  if (num === 1) return total;
-  return factorialTail(num - 1, total * num);	
-}
+// // 꼬리 재귀함수로 해결
+// function factorialTail(num, total=1) {
+//   if (num === 1) return total;
+//   return factorialTail(num - 1, total * num);	
+// }
 
-factorialTail(3);
+// factorialTail(3);
 
-function factorial(n,partialFactorial=1){
-    if(!n)
-        return partialFactorial;
-    return factorial(n-1,n*partialFactorial)
-}
+// function factorial(n,partialFactorial=1){
+//     if(!n)
+//         return partialFactorial;
+//     return factorial(n-1,n*partialFactorial)
+// }
 
-
-
-
-factorial(3)
+// factorial(3)
 
 
-console.log('일반재귀 : ', factorialBasic(3));
-console.log('꼬리재귀 : ', factorialTail(3));
+// console.log('일반재귀 : ', factorialBasic(3));
+// console.log('꼬리재귀 : ', factorialTail(3));
+
+
+
+const graph = {
+  A: ['B', 'C'],
+  B: ['A', 'D'],
+  C: ['A', 'G', 'H', 'I'],
+  D: ['B', 'E', 'F'],
+  E: ['D'],
+  F: ['D'],
+  G: ['C'],
+  H: ['C'],
+  I: ['C', 'J'],
+  J: ['I']
+};
+
+// // BFS
+// const bfs = (graph, startNode) => {
+// 	const visited = [];
+// 	let needVisit = [];
+
+// 	needVisit.push(startNode);
+
+// 	while (needVisit.length !== 0) {
+// 		const node = needVisit.shift();
+// 		if (!visited.includes(node)) {
+// 			visited.push(node);
+// 			needVisit = [...needVisit, ...graph[node]];
+// 		}
+// 	}
+// 	return visited;
+// };
+
+// console.log(bfs(graph, "A"));
+
+// function solution(numbers, target) { 
+//   let answer = 0;  
+    
+//   function dfs(index, sum) {
+//     if(index === numbers.length) {
+//       if(sum === target) {
+//         answer += 1;
+//       }
+//       return;
+//     }
+//     dfs(index+ 1 , sum + numbers[index]);
+//     dfs(index+ 1 , sum - numbers[index]);
+//   }
+//   dfs(0, 0);    
+//   return answer;
+// }
+
+// maps = [[1, 0, 1, 1, 1], [1, 0, 1, 0, 1], [1, 0, 1, 1, 1], [1, 1, 1, 0, 1]]
+
+// console.log(maps[0].length, maps.length);
+
+let queue = [];
+console.log(queue);
+
+queue.push([0, 0])
+console.log(queue);
+
+let [x, y] = queue.shift();
+console.log(queue);
+console.log(x, y);
+
+let nx = x + (-1)
+let ny = y + 0
+
