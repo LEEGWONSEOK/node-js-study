@@ -317,6 +317,7 @@ let [x, y] = queue.shift();
 console.log(queue);
 console.log(x, y);
 
+
 let nx = x + (-1)
 let ny = y + 0
 
