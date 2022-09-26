@@ -307,20 +307,85 @@ const graph = {
 
 // console.log(maps[0].length, maps.length);
 
-let queue = [];
-console.log(queue);
+// let queue = [];
+// console.log(queue);
 
-queue.push([0, 0])
-console.log(queue);
+// queue.push([0, 0])
+// console.log(queue);
 
-let [x, y] = queue.shift();
-console.log(queue);
-console.log(x, y);
+// let [x, y] = queue.shift();
+// console.log(queue);
+// console.log(x, y);
 
 
 
-let nx = x + (-1)
-let ny = y + 0
+// let nx = x + (-1)
+// let ny = y + 0
+
+// function selectionSort (arr) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		let minIndex = i;
+// 		for (let j = i + 1; j < arr.length; j++) {
+// 			if (arr[minIndex] > arr[j]) {
+// 				minIndex = j;
+// 			}
+// 		}
+// 		if (minIndex !== i) {
+// 			let swap = arr[minIndex];
+// 			arr[minIndex] = arr[i];
+// 			arr[i] = swap;
+// 		}
+// 		console.log(`${i}회전 : ${arr}`);
+// 	}
+// 	return console.log(arr);
+// }
+
+// const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+
+// selectionSort(arr1);
+
+
+// function insertionSort (arr) {  
+//   for (let i = 1; i < arr.length; i++) {    
+//     let cur = arr[i];    
+//     let left = i - 1;     
+//     while (left >= 0 && arr[left] > cur) {      
+//       arr[left + 1] = arr[left];      
+//       arr[left] = cur;      
+//       cur = arr[left];      
+//       left--;    
+//     }  
+//   }  
+//   return console.log(arr);
+// }
+
+// const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+
+// insertionSort(arr1);
+
+
+function bubbleSort (arr) {  
+  for (let i = 0; i < arr.length; i++) {    
+    let swap;    
+    for (let j = 0; j < arr.length - 1 - i; j++) {      
+      if (arr[j] > arr[j + 1]) {        
+        swap = arr[j];        
+        arr[j] = arr[j + 1];        
+        arr[j + 1] = swap;      
+      }    
+    }    
+    console.log(`${i}회전: ${arr}`);    
+    if (!swap) {      
+      break;    
+    }  
+  }  
+  return console.log(arr);
+}
+
+const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+
+bubbleSort(arr1);
+
 
 
 
