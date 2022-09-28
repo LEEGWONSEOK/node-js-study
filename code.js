@@ -364,29 +364,125 @@ const graph = {
 // insertionSort(arr1);
 
 
-function bubbleSort (arr) {  
-  for (let i = 0; i < arr.length; i++) {    
-    let swap;    
-    for (let j = 0; j < arr.length - 1 - i; j++) {      
-      if (arr[j] > arr[j + 1]) {        
-        swap = arr[j];        
-        arr[j] = arr[j + 1];        
-        arr[j + 1] = swap;      
-      }    
-    }    
-    console.log(`${i}회전: ${arr}`);    
-    if (!swap) {      
-      break;    
-    }  
-  }  
-  return console.log(arr);
+// function bubbleSort (arr) {  
+//   for (let i = 0; i < arr.length; i++) {    
+//     let swap;    
+//     for (let j = 0; j < arr.length - 1 - i; j++) {      
+//       if (arr[j] > arr[j + 1]) {        
+//         swap = arr[j];        
+//         arr[j] = arr[j + 1];        
+//         arr[j + 1] = swap;      
+//       }    
+//     }    
+//     console.log(`${i}회전: ${arr}`);    
+//     if (!swap) {      
+//       break;    
+//     }  
+//   }  
+//   return console.log(arr);
+// }
+
+// const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
+
+// bubbleSort(arr1);
+
+
+// // ff
+
+// 최소 직사각형
+
+// function solution(sizes) {
+//   let answer = 0;
+//   const first = [];
+//   const second = [];
+
+//   for (let i = 0; i < sizes.length; i++) {
+//     if (sizes[i][0] >= sizes[i][1]) {
+//       sizes[i] = sizes[i].reverse();
+//     } 
+//     first.push(sizes[i][0]);
+//     second.push(sizes[i][1]);
+//   }
+//   answer = Math.max(...first) * Math.max(...second);
+
+//   return answer;
+// }
+
+// solution([[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]);
+
+
+// 소수찾기
+
+// function solution(numbers) {
+//   let answer = 0;
+//   const numList = numbers.split("");
+//   const numAll = [];
+//   const numListLength = numList.length
+//   console.log(numList);
+
+  // 길이에 따라
+//   function searchAll(numListLength) {
+//     for (let i = 0; i < numListLength; i++) {
+//       num[i]
+//     }
+//   }
+
+//   for (let i = 0; i < numList.length; i++) {
+//     numAll.push(numList[i]);
+//     if (i === numList.length - 1) {
+//       numAll.push(numList[i] + numList[0]);
+//       numAll.push(numList[0] + numList[i]);
+//     } else {
+//       numAll.push(numList[i] + numList[i + 1]);
+//       numAll.push(numList[i + 1] + numList[i]);
+//     }
+//     for (let j = )
+//   }
+//   console.log(numAll);
+//   const toNum = numAll.map(Number);
+//   const result = [...new Set(toNum)];
+//   console.log(result);
+
+
+//   return answer;
+// }
+
+function solution(numbers) {
+  let answer = [];
+  let nums = numbers.split(''); 
+  
+  console.log(nums);
+  // 소수 판별
+  const isPrimeNum = (num) => {
+    if (num <= 1) return false;
+    for (let i = 2; i * i <= num; i++) {
+      if (num % i === 0) return false;
+    }
+    return true;
+  }
+    
+  // 순열 만들기
+  const getPermutation = (arr, fixed) => {
+    if (arr.length >= 1) {
+      for (let i = 0; i < arr.length; i++) {
+        const newNum = fixed + arr[i];
+        const copyArr = [...arr];
+        console.log('newNum:', newNum);
+        console.log('copyArr:', copyArr);
+        copyArr.splice(i, 1);
+        console.log('copyArr:', copyArr);
+        if (!answer.includes(+newNum) && isPrimeNum(+newNum)) {
+          answer.push(+newNum)
+          console.log('+newNum:', +newNum);
+        }
+        getPermutation(copyArr, newNum);
+      }
+    }
+  }
+    
+  getPermutation(nums, '');
+  return answer.length;
 }
 
-const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
-
-bubbleSort(arr1);
-
-
-ff
-
-
+console.log(solution("17"));
+//console.log(solution("011"));
