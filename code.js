@@ -447,42 +447,68 @@ const graph = {
 //   return answer;
 // }
 
-function solution(numbers) {
-  let answer = [];
-  let nums = numbers.split(''); 
+// function solution(numbers) {
+//   let answer = [];
+//   let nums = numbers.split(''); 
   
-  console.log(nums);
-  // 소수 판별
-  const isPrimeNum = (num) => {
-    if (num <= 1) return false;
-    for (let i = 2; i * i <= num; i++) {
-      if (num % i === 0) return false;
-    }
-    return true;
-  }
+//   console.log(nums);
+//   // 소수 판별
+//   const isPrimeNum = (num) => {
+//     if (num <= 1) return false;
+//     for (let i = 2; i * i <= num; i++) {
+//       if (num % i === 0) return false;
+//     }
+//     return true;
+//   }
     
-  // 순열 만들기
-  const getPermutation = (arr, fixed) => {
-    if (arr.length >= 1) {
-      for (let i = 0; i < arr.length; i++) {
-        const newNum = fixed + arr[i];
-        const copyArr = [...arr];
-        console.log('newNum:', newNum);
-        console.log('copyArr:', copyArr);
-        copyArr.splice(i, 1);
-        console.log('copyArr:', copyArr);
-        if (!answer.includes(+newNum) && isPrimeNum(+newNum)) {
-          answer.push(+newNum)
-          console.log('+newNum:', +newNum);
-        }
-        getPermutation(copyArr, newNum);
-      }
+//   // 순열 만들기
+//   const getPermutation = (arr, fixed) => {
+//     if (arr.length >= 1) {
+//       for (let i = 0; i < arr.length; i++) {
+//         const newNum = fixed + arr[i];
+//         const copyArr = [...arr];
+//         console.log('newNum:', newNum);
+//         console.log('copyArr:', copyArr);
+//         copyArr.splice(i, 1);
+//         console.log('copyArr:', copyArr);
+//         if (!answer.includes(+newNum) && isPrimeNum(+newNum)) {
+//           answer.push(+newNum)
+//           console.log('+newNum:', +newNum);
+//         }
+//         getPermutation(copyArr, newNum);
+//       }
+//     }
+//   }
+    
+//   getPermutation(nums, '');
+//   return answer.length;
+// }
+
+// console.log(solution("17"));
+//console.log(solution("011"));
+
+
+function quickSort(arr) {
+  if (arr.length < 2) return arr;
+  const pivot = [arr[0]];
+  const start = [];
+  const end = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      start.push(arr[i]);
+    } else if (arr[i] > pivot) {
+      end.push(arr[i]);
+    } else {
+      pivot.push[arr[i]];
     }
   }
-    
-  getPermutation(nums, '');
-  return answer.length;
+  console.log('pivot : ', pivot);
+  console.log('start : ', start);
+  console.log('end : ', end);
+  return quickSort(start).concat(pivot, quickSort(end));
 }
 
-console.log(solution("17"));
-//console.log(solution("011"));
+const sorted = quickSort([7, 5, 9, 0, 3, 1, 6, 2, 4, 8]);
+
+console.log(sorted);
