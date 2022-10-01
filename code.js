@@ -488,27 +488,65 @@ const graph = {
 //console.log(solution("011"));
 
 
-function quickSort(arr) {
-  if (arr.length < 2) return arr;
-  const pivot = [arr[0]];
-  const start = [];
-  const end = [];
+// function quickSort(arr) {
+//   if (arr.length < 2) return arr;
+//   const pivot = [arr[0]];
+//   const start = [];
+//   const end = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      start.push(arr[i]);
-    } else if (arr[i] > pivot) {
-      end.push(arr[i]);
-    } else {
-      pivot.push[arr[i]];
-    }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < pivot) {
+//       start.push(arr[i]);
+//     } else if (arr[i] > pivot) {
+//       end.push(arr[i]);
+//     } else {
+//       pivot.push[arr[i]];
+//     }
+//   }
+//   console.log('pivot : ', pivot);
+//   console.log('start : ', start);
+//   console.log('end : ', end);
+//   return quickSort(start).concat(pivot, quickSort(end));
+// }
+
+// const sorted = quickSort([7, 5, 9, 0, 3, 1, 6, 2, 4, 8]);
+
+// console.log(sorted);
+
+
+// function movingStuff(stuff, limit) {
+ 
+//   let count = 0; 
+//   let sortedStuff = stuff.sort((a, b) => a - b) 
+//   console.log('sortedStuff : ', sortedStuff);
+//   while (sortedStuff.length !==0) { 
+//     if (sortedStuff[0] + sortedStuff[sortedStuff.length-1] <= limit) { 
+//       count++ 
+//       sortedStuff.shift();
+//       sortedStuff.pop();
+//       console.log('sortedStuff : ', sortedStuff);
+//     } else {
+//       count++
+//       sortedStuff.pop();
+//       console.log('sortedStuff : ', sortedStuff);
+//     }
+//   }
+//   return console.log(count); 
+// }
+
+// movingStuff([70, 50, 80, 50], 100);
+
+
+// 
+
+function partTimeJob(k) {
+  let count = 0;
+  const arr = [500, 100, 50, 10, 5, 1];
+  for (item of arr) {
+    count = count + Math.floor(k / item);
+    k = k - item * Math.floor(k / item);
   }
-  console.log('pivot : ', pivot);
-  console.log('start : ', start);
-  console.log('end : ', end);
-  return quickSort(start).concat(pivot, quickSort(end));
+  return count;
 }
 
-const sorted = quickSort([7, 5, 9, 0, 3, 1, 6, 2, 4, 8]);
-
-console.log(sorted);
+console.log(partTimeJob(1230));
