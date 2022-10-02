@@ -539,14 +539,32 @@ const graph = {
 
 // 
 
-function partTimeJob(k) {
-  let count = 0;
-  const arr = [500, 100, 50, 10, 5, 1];
-  for (item of arr) {
-    count = count + Math.floor(k / item);
-    k = k - item * Math.floor(k / item);
+// function partTimeJob(k) {
+//   let count = 0;
+//   const arr = [500, 100, 50, 10, 5, 1];
+//   for (item of arr) {
+//     count = count + Math.floor(k / item);
+//     k = k - item * Math.floor(k / item);
+//   }
+//   return count;
+// }
+
+// console.log(partTimeJob(1230));
+
+
+function quickSort2(arr) {
+  if (arr.length <= 1) return arr;
+  const pivot = arr[0];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] <= pivot) left.push(arr[i]);
+    else right.push(arr[i]);
   }
-  return count;
+
+  const lSorted = quickSort2(left);
+  const rSorted = quickSort2(right);
+  return [...lSorted, pivot, ...rSorted];
 }
 
-console.log(partTimeJob(1230));
