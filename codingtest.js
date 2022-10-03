@@ -42,6 +42,8 @@ function solution(registered_list, new_id) {
       }
     }
   }
+
+  
   
   for (item of check) {
     if (item !== 2) {
