@@ -569,73 +569,44 @@ const graph = {
 // }
 
 
-function solution(nums) {
-  let answer = 0;
-  const set = new Set(nums);
-  const uniqueNums = [...set];
-  const uniqueNumsLength = uniqueNums.length;
-  const selectNum = nums.length / 2;
-  console.log('uniqueNumsLength : ', uniqueNumsLength);
-  console.log('uniqueNums : ', uniqueNums);
-  console.log('selectNum : ', selectNum);
-  if (uniqueNumsLength >= selectNum) {
-    return selectNum;
+// 폰켓몬
+// function solution(nums) {
+//   let answer = 0;
+//   const set = new Set(nums);  // 중복 제거
+//   const uniqueNums = [...set];
+//   const uniqueNumsLength = uniqueNums.length;  
+//   const selectNum = nums.length / 2;  // 선택 개수
+  
+//   console.log('uniqueNumsLength : ', uniqueNumsLength);
+//   console.log('uniqueNums : ', uniqueNums);
+//   console.log('selectNum : ', selectNum);
+  
+//   if (uniqueNumsLength >= selectNum) {
+//     return selectNum;
+//   }
+//   return uniqueNumsLength;
+//   // 3항 연산자
+// }
+
+// console.log(solution([3, 1, 2, 3]));  // 2
+// console.log(solution([3, 3, 3, 2, 2, 4]));  // 3
+// console.log(solution([3, 3, 3, 2, 2, 2]));  // 2
+
+// // 위장
+function solution(clothes) {
+  let answer = 1;   // 곱해야 되기 때문에 0 -> 1로 변경
+  const obj = {};   // 빈 object 생성
+  for (let i = 0; i < clothes.length; i++) {
+    obj[clothes[i][1]] = (obj[clothes[i][1]] || 1) + 1; // 반복문 돌리면서 개수 추가
+    console.log(obj);
   }
-  return uniqueNumsLength;
+
+  for(let key in obj){
+    answer *= obj[key];
+    console.log(answer);
+  }
+  
+  return answer - 1;
 }
 
-
-// function solution(nums) {
-//   var answer = [];
-//   var max = nums.length / 2;
-        
-//     for(let i = 0; i < nums.length; i++) {
-//         if(answer.length < max) {
-//             if(!answer.includes(nums[i])) {
-//                 answer.push(nums[i]);
-//             }
-//           console.log(answer);
-//         }
-//     }
-    
-//     return answer.length;    
-// }
-
-console.log(solution([3, 1, 2, 3]));  // 2
-console.log(solution([3, 3, 3, 2, 2, 4]));  // 3
-console.log(solution([3, 3, 3, 2, 2, 2]));  // 2
-// function solution(clothes) {
-//   let answer = 0;
-//   // 0, 1, 2, 01, 12
-//   // 배열 -> 객체로 변환
-//   const arrToObj = (arr) => {
-//     return arr.reduce((acc, row) => {
-//       const [clothe, kind] = row;
-//       acc[kind] = [...(acc[kind] || []), clothe];
-//       return acc;
-//     }, {});
-//   };
-//   console.log(arrToObj(clothes));
-//   const newArr = Object.values(arrToObj(clothes));
-//   console.log(newArr);
-//   return answer;
-// }
-
-// function solution(clothes) {
-//   let answer = 1;
-//   const obj = {};
-//   for(let i = 0; i < clothes.length; i++){
-//     obj[clothes[i][1]] = (obj[clothes[i][1]] || 1) + 1;
-//     console.log(obj);
-//   }
-
-//   for(let key in obj){
-//     answer *= obj[key];
-//     console.log(answer);
-//   }
-  
-//   return answer-1;
-// }
-
-// //console.log(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]));  // 5
-// console.log(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"], ["blue_jean", "pants"], ["black_jean", "pants"]]));  // 5
+console.log(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]));  // 5
