@@ -11,8 +11,6 @@
 // var outerFunc = outer();
 // outerFunc();
 
-
-
 // const country = {
 //   name: 'korea',    // 객체의 프로퍼티
 //   population: '123',
@@ -20,8 +18,6 @@
 //     return this.name;
 //   }
 // };
-
-
 
 // const coffee = [];
 
@@ -32,7 +28,6 @@
 // console.log(coffee[0]);
 // console.log(coffee.length);
 
-
 // const animal = ['dog', 'cat'];
 
 // let [first, second] = animal;
@@ -40,15 +35,11 @@
 // console.log(first);
 // console.log(second);
 
-
-
 // const func = function () {
 //   console.log(arguments);
 // }
 
 // func(1, 2, 3, 4);
-
-
 
 // const func = (...args) => {
 //   console.log(args);
@@ -90,7 +81,6 @@
 //   console.log('두번째 작업', result);
 // });
 
-
 // function work(sec) {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -116,7 +106,6 @@
 // console.log('asyncFunc2', asyncFunc2());
 // console.log('work', work());
 
-
 // function work(sec) {
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
@@ -135,7 +124,6 @@
 //   console.log(result);
 // })
 
-
 // function sum(a, b) {
 //   if (typeof a !== 'number' || typeof b !== 'number') {
 //     throw new Error('type of arguments must be number type');
@@ -146,7 +134,6 @@
 
 // sum(1, 4);
 // sum(1, 'a');
-
 
 // function wait(sec) {
 //   return new Promise((resolve, resject) => {
@@ -173,7 +160,6 @@
 // const result = myAsyncFunc();
 // console.log(result);
 
-
 // async function myAsyncFunc() {
 //   throw 'myAsyncFunc error';
 // }
@@ -186,7 +172,6 @@
 
 // const result = myAsyncFunc().catch(e => console.log(e));
 // const result2 = myPromiseFunc().catch(e => console.log(e));
-
 
 // function wait(sec) {
 //   return new Promise((resolve, reject) => {
@@ -210,7 +195,7 @@
 
 // function factorial1(num) {
 //   if (num === 1) return 1;
-//   return num * factorial1(num - 1);	
+//   return num * factorial1(num - 1);
 // }
 
 // // 반복문(for) 으로 표현
@@ -227,7 +212,7 @@
 
 function factorialBasic(num) {
   if (num === 1) return 1;
-  return num * factorialBasic(num - 1);	
+  return num * factorialBasic(num - 1);
 }
 
 factorialBasic(3);
@@ -235,7 +220,7 @@ factorialBasic(3);
 // // 꼬리 재귀함수로 해결
 // function factorialTail(num, total=1) {
 //   if (num === 1) return total;
-//   return factorialTail(num - 1, total * num);	
+//   return factorialTail(num - 1, total * num);
 // }
 
 // factorialTail(3);
@@ -248,23 +233,20 @@ factorialBasic(3);
 
 // factorial(3)
 
-
 // console.log('일반재귀 : ', factorialBasic(3));
 // console.log('꼬리재귀 : ', factorialTail(3));
 
-
-
 const graph = {
-  A: ['B', 'C'],
-  B: ['A', 'D'],
-  C: ['A', 'G', 'H', 'I'],
-  D: ['B', 'E', 'F'],
-  E: ['D'],
-  F: ['D'],
-  G: ['C'],
-  H: ['C'],
-  I: ['C', 'J'],
-  J: ['I']
+  A: ["B", "C"],
+  B: ["A", "D"],
+  C: ["A", "G", "H", "I"],
+  D: ["B", "E", "F"],
+  E: ["D"],
+  F: ["D"],
+  G: ["C"],
+  H: ["C"],
+  I: ["C", "J"],
+  J: ["I"],
 };
 
 // // BFS
@@ -286,9 +268,9 @@ const graph = {
 
 // console.log(bfs(graph, "A"));
 
-// function solution(numbers, target) { 
-//   let answer = 0;  
-    
+// function solution(numbers, target) {
+//   let answer = 0;
+
 //   function dfs(index, sum) {
 //     if(index === numbers.length) {
 //       if(sum === target) {
@@ -299,7 +281,7 @@ const graph = {
 //     dfs(index+ 1 , sum + numbers[index]);
 //     dfs(index+ 1 , sum - numbers[index]);
 //   }
-//   dfs(0, 0);    
+//   dfs(0, 0);
 //   return answer;
 // }
 
@@ -316,8 +298,6 @@ const graph = {
 // let [x, y] = queue.shift();
 // console.log(queue);
 // console.log(x, y);
-
-
 
 // let nx = x + (-1)
 // let ny = y + 0
@@ -344,18 +324,17 @@ const graph = {
 
 // selectionSort(arr1);
 
-
-// function insertionSort (arr) {  
-//   for (let i = 1; i < arr.length; i++) {    
-//     let cur = arr[i];    
-//     let left = i - 1;     
-//     while (left >= 0 && arr[left] > cur) {      
-//       arr[left + 1] = arr[left];      
-//       arr[left] = cur;      
-//       cur = arr[left];      
-//       left--;    
-//     }  
-//   }  
+// function insertionSort (arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let cur = arr[i];
+//     let left = i - 1;
+//     while (left >= 0 && arr[left] > cur) {
+//       arr[left + 1] = arr[left];
+//       arr[left] = cur;
+//       cur = arr[left];
+//       left--;
+//     }
+//   }
 //   return console.log(arr);
 // }
 
@@ -363,29 +342,27 @@ const graph = {
 
 // insertionSort(arr1);
 
-
-// function bubbleSort (arr) {  
-//   for (let i = 0; i < arr.length; i++) {    
-//     let swap;    
-//     for (let j = 0; j < arr.length - 1 - i; j++) {      
-//       if (arr[j] > arr[j + 1]) {        
-//         swap = arr[j];        
-//         arr[j] = arr[j + 1];        
-//         arr[j + 1] = swap;      
-//       }    
-//     }    
-//     console.log(`${i}회전: ${arr}`);    
-//     if (!swap) {      
-//       break;    
-//     }  
-//   }  
+// function bubbleSort (arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     let swap;
+//     for (let j = 0; j < arr.length - 1 - i; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         swap = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = swap;
+//       }
+//     }
+//     console.log(`${i}회전: ${arr}`);
+//     if (!swap) {
+//       break;
+//     }
+//   }
 //   return console.log(arr);
 // }
 
 // const arr1 = [7, 5, 9, 0, 3, 1, 6, 2, 4, 8];
 
 // bubbleSort(arr1);
-
 
 // // ff
 
@@ -399,7 +376,7 @@ const graph = {
 //   for (let i = 0; i < sizes.length; i++) {
 //     if (sizes[i][0] >= sizes[i][1]) {
 //       sizes[i] = sizes[i].reverse();
-//     } 
+//     }
 //     first.push(sizes[i][0]);
 //     second.push(sizes[i][1]);
 //   }
@@ -410,7 +387,6 @@ const graph = {
 
 // solution([[14, 4], [19, 6], [6, 16], [18, 7], [7, 11]]);
 
-
 // 소수찾기
 
 // function solution(numbers) {
@@ -420,7 +396,7 @@ const graph = {
 //   const numListLength = numList.length
 //   console.log(numList);
 
-  // 길이에 따라
+// 길이에 따라
 //   function searchAll(numListLength) {
 //     for (let i = 0; i < numListLength; i++) {
 //       num[i]
@@ -443,14 +419,13 @@ const graph = {
 //   const result = [...new Set(toNum)];
 //   console.log(result);
 
-
 //   return answer;
 // }
 
 // function solution(numbers) {
 //   let answer = [];
-//   let nums = numbers.split(''); 
-  
+//   let nums = numbers.split('');
+
 //   console.log(nums);
 //   // 소수 판별
 //   const isPrimeNum = (num) => {
@@ -460,7 +435,7 @@ const graph = {
 //     }
 //     return true;
 //   }
-    
+
 //   // 순열 만들기
 //   const getPermutation = (arr, fixed) => {
 //     if (arr.length >= 1) {
@@ -479,14 +454,13 @@ const graph = {
 //       }
 //     }
 //   }
-    
+
 //   getPermutation(nums, '');
 //   return answer.length;
 // }
 
 // console.log(solution("17"));
 //console.log(solution("011"));
-
 
 // function quickSort(arr) {
 //   if (arr.length < 2) return arr;
@@ -513,15 +487,14 @@ const graph = {
 
 // console.log(sorted);
 
-
 // function movingStuff(stuff, limit) {
- 
-//   let count = 0; 
-//   let sortedStuff = stuff.sort((a, b) => a - b) 
+
+//   let count = 0;
+//   let sortedStuff = stuff.sort((a, b) => a - b)
 //   console.log('sortedStuff : ', sortedStuff);
-//   while (sortedStuff.length !==0) { 
-//     if (sortedStuff[0] + sortedStuff[sortedStuff.length-1] <= limit) { 
-//       count++ 
+//   while (sortedStuff.length !==0) {
+//     if (sortedStuff[0] + sortedStuff[sortedStuff.length-1] <= limit) {
+//       count++
 //       sortedStuff.shift();
 //       sortedStuff.pop();
 //       console.log('sortedStuff : ', sortedStuff);
@@ -531,13 +504,12 @@ const graph = {
 //       console.log('sortedStuff : ', sortedStuff);
 //     }
 //   }
-//   return console.log(count); 
+//   return console.log(count);
 // }
 
 // movingStuff([70, 50, 80, 50], 100);
 
-
-// 
+//
 
 // function partTimeJob(k) {
 //   let count = 0;
@@ -550,7 +522,6 @@ const graph = {
 // }
 
 // console.log(partTimeJob(1230));
-
 
 // function quickSort2(arr) {
 //   if (arr.length <= 1) return arr;
@@ -568,19 +539,18 @@ const graph = {
 //   return [...lSorted, pivot, ...rSorted];
 // }
 
-
 // 폰켓몬
 // function solution(nums) {
 //   let answer = 0;
 //   const set = new Set(nums);  // 중복 제거
 //   const uniqueNums = [...set];
-//   const uniqueNumsLength = uniqueNums.length;  
+//   const uniqueNumsLength = uniqueNums.length;
 //   const selectNum = nums.length / 2;  // 선택 개수
-  
+
 //   console.log('uniqueNumsLength : ', uniqueNumsLength);
 //   console.log('uniqueNums : ', uniqueNums);
 //   console.log('selectNum : ', selectNum);
-  
+
 //   if (uniqueNumsLength >= selectNum) {
 //     return selectNum;
 //   }
@@ -592,21 +562,62 @@ const graph = {
 // console.log(solution([3, 3, 3, 2, 2, 4]));  // 3
 // console.log(solution([3, 3, 3, 2, 2, 2]));  // 2
 
-// // 위장
-function solution(clothes) {
-  let answer = 1;   // 곱해야 되기 때문에 0 -> 1로 변경
-  const obj = {};   // 빈 object 생성
-  for (let i = 0; i < clothes.length; i++) {
-    obj[clothes[i][1]] = (obj[clothes[i][1]] || 1) + 1; // 반복문 돌리면서 개수 추가
-    console.log(obj);
-  }
+// // // 위장
+// function solution(clothes) {
+//   let answer = 1;   // 곱해야 되기 때문에 0 -> 1로 변경
+//   const obj = {};   // 빈 object 생성
+//   for (let i = 0; i < clothes.length; i++) {
+//     obj[clothes[i][1]] = (obj[clothes[i][1]] || 1) + 1; // 반복문 돌리면서 개수 추가
+//     console.log(obj);
+//   }
 
-  for(let key in obj){
-    answer *= obj[key];
-    console.log(answer);
-  }
-  
-  return answer - 1;
-}
+//   for(let key in obj){
+//     answer *= obj[key];
+//     console.log(answer);
+//   }
 
-console.log(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]));  // 5
+//   return answer - 1;
+// }
+
+// console.log(solution([["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]));  // 5
+
+// new Promise((resolve, reject) => {
+//   console.log("Inside Promise");
+//   reject(new Error("First Reject"));
+//   resolve("First Resolve");
+// })
+//   .then((value) => {
+//     console.log("Inside then");
+//     console.log("value :", value);
+//   })
+//   .catch((err) => {
+//     console.log("error :", err);
+//   });
+
+// new Promise((resolve, reject) => {
+//   console.log("Inside Promise");
+//   reject(new Error("First Reject"));
+//   resolve("First Resolve");
+// })
+//   .then((value) => {
+//     console.log("Inside then");
+//     console.log("value :", value);
+//   })
+//   .catch((err) => {
+//     console.log("error :", err);
+//   });
+
+new Promise((resolve, reject) => {
+  console.log("Before timeout");
+  setTimeout(() => {
+    resolve(Math.random());
+    console.log("After resolve");
+  }, 3000);
+  console.log("언제 실행될까요?");
+})
+  .then((value) => {
+    console.log("value :", value);
+  })
+  .then(() => {
+    console.log("then2");
+  });
