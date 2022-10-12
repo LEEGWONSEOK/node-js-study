@@ -607,17 +607,62 @@ const graph = {
 //     console.log("error :", err);
 //   });
 
-new Promise((resolve, reject) => {
-  console.log("Before timeout");
-  setTimeout(() => {
-    resolve(Math.random());
-    console.log("After resolve");
-  }, 3000);
-  console.log("언제 실행될까요?");
-})
-  .then((value) => {
-    console.log("value :", value);
-  })
-  .then(() => {
-    console.log("then2");
-  });
+// new Promise((resolve, reject) => {
+//   console.log("Before timeout");
+//   setTimeout(() => {
+//     resolve(Math.random());
+//     console.log("After resolve");
+//   }, 3000);
+//   console.log("언제 실행될까요?");
+// })
+//   .then((value) => {
+//     console.log("value :", value);
+//   })
+//   .then(() => {
+//     console.log("then2");
+//   });
+
+// function solution(s) {
+//   const arr = [...s];
+//   let stackCount = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     stackCount += arr[i] === "(" ? 1 : -1;
+//     if (stackCount < 0) return false;
+//   }
+//   return stackCount === 0 ? true : false;
+// }
+
+// console.log(solution("()()"));
+// console.log(solution("(())()"));
+// console.log(solution(")()("));
+// console.log(solution("(()("));
+
+// function solution(arr) {
+//   //let answer = [];
+//   // 반복문 돌려서
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//       arr.splice(i, 1);
+//       i--;
+//       //console.log(arr);
+//     }
+//   }
+//   return arr;
+// }
+
+// function solution(arr) {
+//   let answer = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== arr[i + 1]) {
+//       answer.push(arr[i]);
+//     }
+//   }
+//   return answer;
+// }
+
+// console.log(solution([1, 1, 3, 3, 0, 1, 1]));
+
+function solution(progresses, speeds) {
+  let answer = [];
+  return answer;
+}
