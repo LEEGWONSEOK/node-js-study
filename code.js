@@ -662,7 +662,43 @@ const graph = {
 
 // console.log(solution([1, 1, 3, 3, 0, 1, 1]));
 
-function solution(progresses, speeds) {
-  let answer = [];
+// function solution(progresses, speeds) {
+//   let answer = {};
+//   for (let i = 0; i < progresses.length; i++) {
+//     progresses[i] = Math.ceil((100 - progresses[i]) / speeds[i]);
+//   }
+//   for (let i = 0; i < progresses.length; i++) {
+//     if (progresses[i] >= progresses[i + 1]) {
+//       progresses[i + 1] = progresses[i];
+//     }
+//   }
+//   progresses.forEach((x) => {
+//     answer[x] = (answer[x] || 0) + 1;
+//   });
+
+//   answer = Object.values(answer);
+//   return answer;
+// }
+
+// console.log(solution([93, 30, 55], [1, 30, 5]));
+// console.log(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]));
+
+function solution(priorities, location) {
+  let answer = 0;
+  let numArr = [];
+
+  for (let i = 0; i < priorities.length; i++) {
+    numArr.push([priorities[i], i]);
+  }
+  console.log("numArr", numArr);
+  numArr.sort();
+  console.log("sort", numArr);
+  numArr.reverse();
+  console.log("reverse", numArr);
+
+  //
   return answer;
 }
+
+console.log(solution([2, 1, 3, 2], 2));
+console.log(solution([1, 1, 9, 1, 1, 1], 0));
