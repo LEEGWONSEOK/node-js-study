@@ -683,22 +683,52 @@ const graph = {
 // console.log(solution([93, 30, 55], [1, 30, 5]));
 // console.log(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1]));
 
-function solution(priorities, location) {
+// function solution(priorities, location) {
+//   let answer = 0;
+//   let numArr = [];
+
+//   for (let i = 0; i < priorities.length; i++) {
+//     numArr.push([priorities[i], i]);
+//   }
+//   console.log("numArr", numArr);
+//   numArr.sort();
+//   console.log("sort", numArr);
+//   numArr.reverse();
+//   console.log("reverse", numArr);
+
+//   //
+//   return answer;
+// }
+
+// console.log(solution([2, 1, 3, 2], 2));
+// console.log(solution([1, 1, 9, 1, 1, 1], 0));
+
+function solution(k, dungeons) {
   let answer = 0;
-  let numArr = [];
+  const dLength = dungeons.length;
+  const visited = Array(dLength).fill(false);
 
-  for (let i = 0; i < priorities.length; i++) {
-    numArr.push([priorities[i], i]);
-  }
-  console.log("numArr", numArr);
-  numArr.sort();
-  console.log("sort", numArr);
-  numArr.reverse();
-  console.log("reverse", numArr);
+  /* DFS로 구현 */
+  const dfs = (currentK, count) => {
+    for (let i = 0; i < dLength; i++) {
+      if (!visited[i] && currentK >= dungeons[i][0]) {
+        visited[i] = true;
+        dfs(currentK - dungeons[i][1], count + 1);
+        visited[i] = false;
+      }
+    }
+    answer = Math.max(answer, count);
+    return;
+  };
 
-  //
+  dfs(k, 0);
   return answer;
 }
 
-console.log(solution([2, 1, 3, 2], 2));
-console.log(solution([1, 1, 9, 1, 1, 1], 0));
+console.log(
+  solution(80, [
+    [80, 20],
+    [50, 40],
+    [30, 10],
+  ])
+);
